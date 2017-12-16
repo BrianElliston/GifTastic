@@ -2,9 +2,11 @@ alert("moving forward")
 
 var boats = ["Yacht", "Dinghy", "Sail", "Power"];
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3"
+var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE34money"
 
     
+$("#find-movie").on("click", function(event) {
+
 
     $.ajax({
       url: queryURL,
@@ -13,7 +15,7 @@ var queryURL = "http://api.giphy.com/v1/gifs/search?" + boats + "api_key=6rYpWtE
       console.log(response);
     });
 
-
+  });
      // Looping through the array of movies
      for (var i = 0; i < boats.length; i++) {
       
