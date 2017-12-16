@@ -1,11 +1,11 @@
-alert("moving forward")
+
 
 var boats = ["Yacht", "Dinghy", "Sail", "Power"];
 
 var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE34money"
 
     
-$("#find-movie").on("click", function(event) {
+$("#boats-view").on("click", function(event) {
 
 
     $.ajax({
@@ -16,6 +16,9 @@ $("#find-movie").on("click", function(event) {
     });
 
   });
+
+
+  
      // Looping through the array of movies
      for (var i = 0; i < boats.length; i++) {
       
