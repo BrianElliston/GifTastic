@@ -2,7 +2,7 @@
 
 var boats = ["Yacht", "Dinghy", "Sail", "Power"];
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE34money"
+var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3"
 
     
 $("#boats-view").on("click", function(event) {
