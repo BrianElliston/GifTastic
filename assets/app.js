@@ -13,8 +13,17 @@ $("#boats-view").on("click", function(event) {
       url: queryURL,
       method: 'GET'
     }).done(function(response) {
+
+      var boatDiv = $("<div class='boat'>")
+
+      var gif = response.data;
+
+      var gif1 = $("<p>").text(gif);
+
+      boatDiv.append(gif);
+
       console.log(response);
-      $("#boats-view").text(JSON.stringify(response));
+      // $("#boats-view").text(JSON.stringify(response));
     });
 
   });
