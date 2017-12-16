@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>GifTasic</title>
+	<title>GifTastic</title>
 
 <!-- These Links point to Your style sheets; you may/will need to alter these paths to your sites file structure. Note: Reset.css must come FIRST!!! -->
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
 
 
 	<!-- Latest compiled and minified CSS -->
@@ -30,8 +30,19 @@ crossorigin="anonymous"></script>
 <body>
 
   
-<h1>Hello!</h1>
+<h1>Boats</h1>
 
+ <!-- Boats will get dumped here -->
+ <div id="boats-view"></div>
+ 
+
+<form id="boat-form">
+  <label for="boat-input">Add a boat!!</label>
+  <input type="text" id="movie-input"><br>
+
+  <!-- Button triggers new movie to be added -->
+  <input id="add-boat" type="submit" value="Add a boat">
+</form>
 
 
 <!-- JAVASCRIPT - This must be last item in <body>. -->
