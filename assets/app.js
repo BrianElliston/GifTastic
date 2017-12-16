@@ -2,10 +2,11 @@
 
 var boats = ["Yacht", "Dinghy", "Sail", "Power"];
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3"
+var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "&api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3"
 
     
 $("#boats-view").on("click", function(event) {
+
 
 
     $.ajax({
@@ -13,23 +14,24 @@ $("#boats-view").on("click", function(event) {
       method: 'GET'
     }).done(function(response) {
       console.log(response);
+      $("#boats-view").text(JSON.stringify(response));
     });
 
   });
 
 
   
-     // Looping through the array of movies
+     // Looping through the array of boats
      for (var i = 0; i < boats.length; i++) {
       
-                // Then dynamicaly generating buttons for each movie in the array.
+                // Then dynamicaly generating buttons for each boat in the array.
                 // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
                 var a = $("<button>");
                 // Adding a class
                 a.addClass("boat");
-                // Adding a data-attribute with a value of the movie at index i
+                // Adding a data-attribute with a value of the boats at index i
                 a.attr("data-name", boats[i]);
-                // Providing the button's text with a value of the movie at index i
+                // Providing the button's text with a value of the boats at index i
                 a.text(boats[i]);
                 // Adding the button to the HTML
                 $("#boats-view").append(a);
