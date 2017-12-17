@@ -1,29 +1,45 @@
 
-
+// This is my initial array 
 var boats = ["Yacht", "Dinghy", "Sail", "Power"];
 
-var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boats + "&api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3"
-
-    
-$("#boats-view").on("click", function(event) {
 
 
 
+ // This is my onClick function   
+$(document).on("click", ".boat",function(event) {
+
+
+//This is where I am grabbing and storing the data-name property
+var boatsearch = $(this).attr("data-name");
+
+console.log(boatsearch);
+  //This is where I put in my API and API key!
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + boatsearch + "&limit=3&api_key=6rYpWtEtGmNhbjcdGWby5Lq1FZETiUE3";
+    //This is my ajax call which does what it does
     $.ajax({
       url: queryURL,
       method: 'GET'
+      //This is my "promise" not to do anything until all the asynchronis reslults come in from my API
     }).done(function(response) {
 
-      var boatDiv = $("<div class='boat'>")
+      $(".image").empty();
 
-      var gif = response.data;
+      for (var i = 0; i < response.data.length; i++){
+        
+                        var image = $("<img>");
+                        image.attr("src", response.data[i].images.fixed_height_still.url);
+                        $(".image").append(image);
+        
+                      }
 
-      var gif1 = $("<p>").text(gif);
+      
 
-      boatDiv.append(gif);
+     
+
+      
 
       console.log(response);
-      // $("#boats-view").text(JSON.stringify(response));
+    //  $("#boats-view").text(JSON.stringify(response)); 
     });
 
   });
@@ -46,3 +62,5 @@ $("#boats-view").on("click", function(event) {
                 $("#boats-view").append(a);
               }
             
+
+              
