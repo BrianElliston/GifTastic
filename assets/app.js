@@ -21,19 +21,34 @@ console.log(boatsearch);
       method: 'GET'
       //This is my "promise" not to do anything until all the asynchronis reslults come in from my API
     }).done(function(response) {
-
+      //This clears out my old images
       $(".image").empty();
 
       for (var i = 0; i < response.data.length; i++){
         
                         var image = $("<img>");
                         image.attr("src", response.data[i].images.fixed_height_still.url);
+                        image.attr("status", "still");
+                        image.attr("animated", response.data[i].images.fixed_height.url);
+                        image.attr("still", response.data[i].images.fixed_height_still.url);
                         $(".image").append(image);
         
                       }
 
-      
-
+      //**********Gonna make this mine (currently copied from classWork)*************** */
+                      // $(".gif").on("click", function() {
+                      //   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                      //   var state = $(this).attr("data-state");
+                      //   // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                      //   // Then, set the image's data-state to animate
+                      //   // Else set src to the data-still value
+                      //   if (state === "still") {
+                      //     $(this).attr("src", $(this).attr("data-animate"));
+                      //     $(this).attr("data-state", "animate");
+                      //   } else {
+                      //     $(this).attr("src", $(this).attr("data-still"));
+                      //     $(this).attr("data-state", "still");
+                      //   }
      
 
       
